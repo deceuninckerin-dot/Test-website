@@ -46,6 +46,11 @@
     font-family: 'Cinzel';
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /*--standaardinstellingen pagina--*/
 body {
     background-color: var(--white);
@@ -222,7 +227,7 @@ footer {
 }
 
 .hero-modern {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/m_zij.JPEG');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/mercator.JPEG');
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
@@ -779,4 +784,70 @@ footer {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     min-height: 350px;
+}
+
+
+
+
+/* Aangepaste code voor gsm-formaat*/
+
+@media (max-width: 768px) {
+
+    /* 1. ALGEMENE ZAKEN */
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    /* 2. HET PRAESIDIUM */
+    .praesidium-lid {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .praesidium-info {
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    /* 3. DE CONTACTPAGINA */
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        height: 350px;
+        margin-top: 2rem;
+    }
+
+    /* 4. DE KALENDER */
+    .kalender-container {
+        height: 600px;
+        aspect-ratio: auto;
+    }
+
+    /* 5. HET CLUBLIED */
+    .clublied-kaart {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .clublied-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .liedtekst p,
+    .liedtekst .refrein {
+        font-size: 1.1rem;
+    }
+
+    /* 6. MERCRANTJE & FOTOMAPPEN */
+    .drive-container {
+        height: 500px;
+    }
+
+    .fotos-container {
+        height: 65vh;
+    }
+
 }
