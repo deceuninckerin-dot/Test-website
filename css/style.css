@@ -850,20 +850,33 @@ footer {
         margin-top: 1rem;
     }
 
-    nav ul {
+    nav.main-nav {
+        padding: 0 0.5rem;
+        justify-content: center;
+    }
+
+    nav.main-nav ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
-        padding: 0;
+        gap: 8px;
+        padding: 10px 0;
     }
 
-    nav ul li {
-        font-size: 0.95rem;
+    nav.main-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 0;
     }
 
     .rooster-4-kolommen {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .nav-schild {
+        display: none !important;
     }
 
     /* 3. DE CONTACTPAGINA */
