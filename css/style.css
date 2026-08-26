@@ -109,6 +109,7 @@ header {
     color: var(--white);
     padding: 0 0 0;
     text-align: center;
+
 }
 
 header h1 {
@@ -837,6 +838,42 @@ footer {
         display: none;
     }
 
+    .nav-schild {
+        display: none !important;
+    }
+
+    nav.main-nav {
+        padding: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    nav.main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav.main-nav ul li.dropdown .dropdown-menu {
+        display: none !important;
+    }
+
+    nav.main-nav ul {
+        display: flex;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 12px 15px;
+        margin: 0;
+        width: max-content;
+    }
+
+    nav.main-nav ul li a {
+        white-space: nowrap;
+        font-size: 0.95rem;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
 
     /* 2. HET PRAESIDIUM */
     .praesidium-lid {
@@ -850,33 +887,9 @@ footer {
         margin-top: 1rem;
     }
 
-    nav.main-nav {
-        padding: 0 0.5rem;
-        justify-content: center;
-    }
-
-    nav.main-nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        padding: 10px 0;
-    }
-
-    nav.main-nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-        padding: 10px 0;
-    }
 
     .rooster-4-kolommen {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .nav-schild {
-        display: none !important;
     }
 
     /* 3. DE CONTACTPAGINA */
