@@ -799,6 +799,14 @@ footer {
         overflow-x: hidden;
     }
 
+    header img,
+    .logo img {
+        height: 55px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
     /* 2. HET PRAESIDIUM */
     .praesidium-lid {
         flex-direction: column;
@@ -809,6 +817,18 @@ footer {
     .praesidium-info {
         text-align: left;
         margin-top: 1rem;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 0;
+    }
+
+    nav ul li {
+        font-size: 0.95rem;
     }
 
     /* 3. DE CONTACTPAGINA */
@@ -850,55 +870,34 @@ footer {
         height: 65vh;
     }
 
-
-    /* 1. HET SCHILD IN DE MENUBAR (Voorkomt uitrekken) */
-    header img,
-    .logo img {
-        height: 55px;
-        /* Vaste hoogte voor gsm */
-        width: auto;
-        /* De breedte past zich automatisch aan */
-        object-fit: contain;
-        /* Voorkomt vervorming */
-        margin-bottom: 10px;
-        /* Beetje ademruimte eronder */
-    }
-
-    /* 2. DE MENUBAR (Minder druk maken) */
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        /* Laat de linkjes over meerdere regels lopen als ze niet passen */
-        justify-content: center;
-        gap: 12px;
-        /* Iets minder ruimte tussen de linkjes */
-        padding: 0;
-    }
-
-    nav ul li {
-        font-size: 0.95rem;
-        /* Tekst nét iets kleiner maken op gsm */
-    }
-
-    /* 3. DE OVER ONS SECTIE (Voorkomen dat tekst en foto geplet worden) */
+    /* 7. DE OVER ONS */
     .about-layout {
         display: flex;
         flex-direction: column;
-        /* Zet tekst en foto netjes ónder elkaar */
         text-align: center;
         gap: 2rem;
+        align-items: center;
     }
 
-    /* 4. DE FOOTER (Rust creëren door alles onder elkaar te zetten) */
+    .about-layout img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* 8. DE FOOTER */
     footer,
     .footer-content {
         display: flex;
         flex-direction: column;
-        /* Zet de kolommen onder elkaar */
         text-align: center;
-        /* Lijn de tekst netjes in het midden uit */
         gap: 2.5rem;
-        /* Zorgt voor voldoende ademruimte tussen de blokjes */
         padding: 2rem 1rem;
+    }
+
+    .hero-modern,
+    .section-white {
+        background-attachment: scroll !important;
+        background-position: center center !important;
+        background-size: cover !important;
     }
 }
