@@ -850,9 +850,6 @@ footer {
         height: 65vh;
     }
 
-    /* =========================================
-       SPECIFIEKE MOBIELE FIXES
-       ========================================= */
 
     /* 1. HET SCHILD IN DE MENUBAR (Voorkomt uitrekken) */
     header img,
@@ -884,8 +881,7 @@ footer {
     }
 
     /* 3. DE OVER ONS SECTIE (Voorkomen dat tekst en foto geplet worden) */
-    .over-ons-container,
-    .over-ons-sectie {
+    .about-layout {
         display: flex;
         flex-direction: column;
         /* Zet tekst en foto netjes ónder elkaar */
@@ -895,7 +891,7 @@ footer {
 
     /* 4. DE FOOTER (Rust creëren door alles onder elkaar te zetten) */
     footer,
-    .footer-container {
+    .footer-content {
         display: flex;
         flex-direction: column;
         /* Zet de kolommen onder elkaar */
