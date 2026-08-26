@@ -897,7 +897,11 @@ footer {
     .hero-modern,
     .section-white {
         background-attachment: scroll !important;
-        background-position: center center !important;
+        /* Zet 'fixed' uit, foto scrollt nu normaal mee */
+        background-position: center !important;
+        /* Forceert de foto naar het midden */
         background-size: cover !important;
+        /* Zorgt dat de foto de ruimte vult zonder uit te rekken */
     }
+
 }
