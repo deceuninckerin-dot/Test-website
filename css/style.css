@@ -10,6 +10,15 @@ h2 {
     overflow-wrap: break-word;
 }
 
+h3,
+p,
+.praesidium-info {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
 p,
 a,
 li {
@@ -460,7 +469,7 @@ footer {
 
 .kaart-hoofd .label {
     display: block;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 5vw, 2rem);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
@@ -547,10 +556,13 @@ footer {
 
 .praesidium-lid h3 {
     color: var(--turquoise-dark);
-    font-size: 1.6rem;
+    font-size: clamp(1.1rem, 4.5vw, 1.6rem);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: clamp(0px, 1vw, 2px);
     margin: 0 0 0.5rem 0;
+
+    hyphens: none !important;
+    word-break: keep-all;
 }
 
 .praesidium-lid .naam {
@@ -587,7 +599,7 @@ footer {
 .kalender-sectie h2 {
     color: var(--turquoise-dark);
     margin-bottom: 0.5rem;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
 }
 
 .kalender-sectie p {
@@ -646,7 +658,7 @@ footer {
 
 .mercrantje-sectie h2 {
     color: var(--turquoise-dark);
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     margin-bottom: 1rem;
 }
 
@@ -688,7 +700,7 @@ footer {
 
 .fotos-sectie h2 {
     color: var(--turquoise-dark);
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     margin-bottom: 1rem;
 }
 
@@ -733,7 +745,7 @@ footer {
 
 .contact-header h2 {
     color: var(--turquoise-dark);
-    font-size: 2.8rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     margin-bottom: 1rem;
 }
 
@@ -841,9 +853,9 @@ footer {
 
 .vertrouwens-naam {
     color: var(--turquoise-dark);
-    font-size: 1.6rem;
+    font-size: clamp(1.1rem, 4.5vw, 1.6rem);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: clamp(0px, 1vw, 2px);
     margin: 0 0 0.3rem 0;
 }
 
@@ -934,23 +946,14 @@ footer {
     .praesidium-lid {
         flex-direction: column;
         text-align: center;
-        padding: 1rem;
+        padding: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .praesidium-info {
         text-align: left;
         margin-top: 1rem;
-    }
-
-    h1,
-    h2,
-    h3,
-    p,
-    .praesidium-info {
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        -webkit-hyphens: auto;
-        hyphens: auto;
     }
 
     .rooster-4-kolommen {
@@ -959,21 +962,6 @@ footer {
 
     .kaart-hoofd {
         padding: 1.5rem 1rem !important;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    h1,
-    h2,
-    .praesidium-titel {
-        font-size: 1.6rem !important;
-        line-height: 1.3;
-        letter-spacing: 0;
-        /* Haalt extra ruimte tussen letters weg voor meer ademruimte */
-    }
-
-    .praesidium-lid {
-        padding: 1.5rem;
         width: 100%;
         box-sizing: border-box;
     }
