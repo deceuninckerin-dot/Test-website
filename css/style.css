@@ -349,25 +349,36 @@ footer {
 .sponsors-grid {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
 }
 
-.sponsor-card {
-    background-color: var(--white);
-    color: var(--text-dark);
-    padding: 2rem;
-    border-radius: 10px;
-    font-weight: 600;
+.sponsor-item {
     text-align: center;
-    min-width: 200px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
 }
 
-.sponsor-card:hover {
-    transform: scale(1.05);
+.sponsor-link {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.sponsor-link:hover {
+    transform: scale(1.1);
+}
+
+.sponsor-logo {
+    max-width: 180px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.sponsor-naam {
+    margin-top: 15px;
+    color: var(--white);
+    font-weight: 600;
 }
 
 
@@ -442,11 +453,14 @@ footer {
     text-decoration: none;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
+
+    flex-direction: column;
+    align-items: center;
 }
 
 .kaart-hoofd .label {
     display: block;
-    font-size: 1.1rem;
+    font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
@@ -500,17 +514,15 @@ footer {
 
 
 
-/* --- PRAESIDIUM DETAIL PAGINA (PER JAAR) --- */
+/* --- PRAESIDIUM PER JAAR --- */
 
 .praesidium-detail {
     max-width: 700px;
-    /* Houdt de tekst mooi gecentreerd en niet te breed op grote schermen */
     margin: 2rem auto 4rem auto;
     padding: 0 2rem;
     text-align: center;
 }
 
-/* Styling voor het jaartal bovenaan */
 .praesidium-titel {
     color: var(--turquoise);
     font-weight: 900;
@@ -522,22 +534,17 @@ footer {
     flex-direction: column;
 }
 
-/* Het blokje per praesidiumlid */
 .praesidium-lid {
-    /* De turquoise streep aan de onderkant */
     border-bottom: 2px solid var(--turquoise);
     padding-bottom: 2rem;
     margin-bottom: 2rem;
 }
 
-/* Een slim CSS trucje: Haal de streep weg bij het allerlaatste lid (ICT), 
-   anders staat er een loze streep boven de footer! */
 .praesidium-lid:last-child {
     border-bottom: none;
     margin-bottom: 0;
 }
 
-/* De functie (Praeses, Cantor, etc.) lekker opvallend maken */
 .praesidium-lid h3 {
     color: var(--turquoise-dark);
     font-size: 1.6rem;
@@ -546,7 +553,6 @@ footer {
     margin: 0 0 0.5rem 0;
 }
 
-/* Naam van de persoon */
 .praesidium-lid .naam {
     font-size: 1.4rem;
     font-weight: 700;
@@ -554,25 +560,18 @@ footer {
     margin: 0 0 0.3rem 0;
 }
 
-/* De studierichting subtieler weergeven */
 .praesidium-lid .studie {
     font-size: 1.05rem;
     color: #666;
-    /* Zacht grijs zodat de focus op de naam/functie blijft */
     font-style: italic;
     margin: 0;
 }
 
-/* Het extra infoblokje voor uitgebreide praesidiumleden */
 .praesidium-info {
     max-width: 500px;
-    /* Zorgt dat het perfect even breed is als de foto */
     margin: 1.5rem auto 0 auto;
-    /* Centreert het onzichtbare blokje in het midden van de pagina */
     text-align: left;
-    /* Zorgt dat de tekst binnenin links uitlijnt */
     line-height: 1.6;
-    /* Een beetje ademruimte tussen de regels */
 }
 
 
@@ -811,6 +810,56 @@ footer {
     min-height: 350px;
 }
 
+/*-- Vertrouwenspersonen --*/
+.vertrouwens-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 3rem;
+}
+
+.vertrouwens-persoon {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.vertrouwens-foto {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.2rem;
+    border: 3px solid var(--turquoise);
+}
+
+.vertrouwens-naam {
+    color: var(--turquoise-dark);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 0.3rem 0;
+}
+
+.vertrouwens-info {
+    font-size: 1.05rem;
+    color: #666;
+    font-style: italic;
+    margin: 0 0 0.5rem 0;
+}
+
+.contact-link-v {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.contact-link-v:hover {
+    color: var(--turquoise);
+}
+
+
+
 
 
 
@@ -899,6 +948,10 @@ footer {
     .contact-map {
         height: 350px;
         margin-top: 2rem;
+    }
+
+    .vertrouwens-grid {
+        grid-template-columns: 1fr;
     }
 
     /* 4. DE KALENDER */
