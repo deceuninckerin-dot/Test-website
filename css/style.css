@@ -258,7 +258,7 @@ footer {
 .hero-modern {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/mercator.JPEG');
     background-size: cover;
-    background-position: top center;
+    background-position: bottom;
     background-attachment: fixed;
     background-repeat: no-repeat;
 
