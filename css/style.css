@@ -1,38 +1,51 @@
-/* =========================================
-   1. GLOBALE VARIABELEN & RESET
-========================================= */
-:root {
-    --turquoise: rgb(70, 162, 168);
-    --turquoise-dark: rgb(56, 136, 141);
-    --white: #ffffff;
-    --text-dark: #333333;
-    --bg-light: #f2f2f2;
+/* ALGEMEEN*/
+
+/* 1. TITELS: Mogen nóóit afbreken, blijven op 1 woord/lijn */
+h1,
+h2,
+h3,
+.praesidium-titel,
+.vertrouwens-naam,
+.kaart-hoofd .label {
+    word-break: keep-all;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    overflow-wrap: break-word;
 }
 
-body {
-    background-color: var(--white);
-    color: var(--text-dark);
-    line-height: 1.6;
-    font-weight: 500;
-    font-size: 1.3rem;
+h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    overflow-wrap: break-word;
+}
+
+/* 2. TEKST: Mag wel afbreken als het echt niet anders past */
+p,
+.praesidium-info {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+p,
+a,
+li {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.kaart-hoofd,
+nav ul {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    padding: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 img,
@@ -43,47 +56,16 @@ iframe,
     height: auto;
 }
 
-/* =========================================
-   2. TYPOGRAFIE (Kogelvrij voor elk scherm)
-========================================= */
-h1,
-h2,
-h3 {
-    /* Voorkomt agressief afbreken; woorden blijven heel */
-    word-break: keep-all;
-    overflow-wrap: normal;
-    hyphens: none;
-    color: var(--turquoise-dark);
+/*--kleuren--*/
+:root {
+    --turquoise: rgb(70, 162, 168);
+    --turquoise-dark: rgb(56, 136, 141);
+    --white: #ffffff;
+    --text-dark: #333333;
+    --bg-light: #f2f2f2;
 }
 
-h1 {
-    font-size: clamp(2rem, 5vw, 4rem);
-}
-
-h2 {
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    margin-bottom: 1rem;
-}
-
-p,
-a,
-li {
-    font-size: clamp(1rem, 2vw, 1.15rem);
-}
-
-/* Uitzondering: Enkel lange infoteksten en links mogen afbreken als het écht moet */
-.praesidium-info,
-.socials {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-}
-
-/* =========================================
-   3. ALGEMENE COMPONENTEN & LAY-OUTS
-========================================= */
-/* Knoppen */
+/*--Knoppen--*/
 .btn {
     background-color: var(--turquoise);
     color: var(--white);
@@ -111,103 +93,50 @@ li {
     border-bottom: 2px solid var(--turquoise-dark);
 }
 
-/* Flex-containers (Secties, Navigatie, etc) */
-.kaart-hoofd,
-nav ul,
-.sponsors-grid,
-.huidig-jaar-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-    margin: 0 auto;
+/*--marges--*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* Algemene Sectie Containers (Kalender, Drive, Foto's, Map) */
-.kalender-container,
-.drive-container,
-.fotos-container,
-.contact-map {
-    width: 100%;
+/*--standaardinstellingen pagina--*/
+body {
     background-color: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin: 0 auto;
-}
-
-.kalender-container,
-.drive-container {
-    border: 3px solid var(--turquoise);
-    max-width: 900px;
-    height: 600px;
-}
-
-.fotos-container {
-    border: 3px solid var(--turquoise);
-    height: 800px;
-}
-
-.contact-map {
-    min-height: 350px;
-    flex: 1;
-}
-
-.kalender-container iframe,
-.drive-container iframe,
-.fotos-container iframe,
-.contact-map iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 350px;
-    border: none;
-    display: block;
-}
-
-/* Gecentreerde Secties (Kalender, Mercrantje, Foto's, Contact header, etc) */
-.kalender-sectie,
-.mercrantje-sectie,
-.fotos-sectie,
-.contact-header,
-.praesidium-galerij,
-.praesidium-detail,
-.about-image,
-.clublied,
-.sponsor-item,
-.contact-sectie {
-    text-align: center;
-    max-width: 1100px;
-    margin: 2rem auto 4rem auto;
-    padding: 0 1.5rem;
-}
-
-.kalender-sectie p,
-.mercrantje-sectie .intro-tekst,
-.fotos-sectie .intro-tekst,
-.contact-header p {
     color: var(--text-dark);
-    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    font-weight: 500;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* =========================================
-   4. HEADER & NAVIGATIE
-========================================= */
+main {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex: 1;
+    width: 100%;
+}
+
+/*--Header--*/
 header {
     background-color: var(--turquoise);
+    color: var(--white);
     padding: 0;
     text-align: center;
-    color: var(--white);
 }
 
 header h1 {
     letter-spacing: 4px;
+    margin: 0;
     font-weight: 250;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    color: var(--white);
 }
 
 header h1::before,
@@ -218,6 +147,7 @@ header h1::after {
     background-color: var(--white);
 }
 
+/*--Navigatie--*/
 .nav-schild {
     height: 40px;
     width: auto;
@@ -233,8 +163,12 @@ nav.main-nav {
 }
 
 nav.main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
     padding: 15px 0;
-    max-width: 1200px;
+    margin: 0;
 }
 
 nav.main-nav ul li a {
@@ -243,7 +177,7 @@ nav.main-nav ul li a {
     font-weight: 600;
     padding: 8px 12px;
     border-radius: 4px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 nav.main-nav ul li a:hover,
@@ -252,7 +186,6 @@ nav.main-nav ul li a.active {
     color: var(--turquoise-dark);
 }
 
-/* Dropdown */
 nav.main-nav ul li.dropdown {
     position: relative;
 }
@@ -267,29 +200,76 @@ nav.main-nav ul li .dropdown-menu {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     z-index: 100;
+    padding: 0;
     margin-top: 10px;
 }
 
 nav.main-nav ul li.dropdown:hover .dropdown-menu {
     display: flex;
     flex-direction: column;
+    gap: 0;
 }
 
-nav.main-nav ul li .dropdown-menu a {
+nav.main-nav ul li .dropdown-menu li {
+    width: 100%;
+}
+
+nav.main-nav ul li .dropdown-menu li a {
+    display: block;
     padding: 12px 16px;
     border-radius: 0;
-    display: block;
 }
 
-/* =========================================
-   5. SPECIFIEKE PAGINA SECTIES
-========================================= */
-/* Hero & Banners */
+nav.main-nav ul li .dropdown-menu li a:hover {
+    background-color: var(--white);
+    color: var(--turquoise-dark);
+}
+
+/*--footer--*/
+footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    margin-top: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-email {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.footer-email:hover {
+    color: var(--turquoise);
+}
+
+/* HOMEPAGE */
+.dynamic-home {
+    max-width: 100%;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 .hero-modern {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/mercator.JPEG');
     background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     padding: 9rem 2rem;
     text-align: center;
     color: var(--white);
@@ -298,13 +278,15 @@ nav.main-nav ul li .dropdown-menu a {
 .hero-modern h2 {
     color: var(--white);
     font-weight: 800;
+    margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-modern p {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-size: 1.3rem;
     max-width: 600px;
     margin: 0 auto 2rem auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .section-turquoise {
@@ -316,6 +298,7 @@ nav.main-nav ul li .dropdown-menu a {
 
 .section-turquoise h2 {
     color: var(--white);
+    margin-bottom: 1rem;
 }
 
 .slant-bottom {
@@ -330,12 +313,98 @@ nav.main-nav ul li .dropdown-menu a {
     padding-top: 4rem;
 }
 
-/* Over Ons */
+.section-white {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/groepsfoto.JPEG');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 6rem 2rem 8rem 2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid var(--turquoise);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.card p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+/*--sponsers--*/
+.sponsors-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.sponsor-item {
+    text-align: center;
+}
+
+.sponsor-link {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.sponsor-link:hover {
+    transform: scale(1.1);
+}
+
+.sponsor-logo {
+    max-width: 180px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.sponsor-naam {
+    margin-top: 15px;
+    color: var(--white);
+    font-weight: 600;
+}
+
+/*OVER ONS*/
 .about-layout {
     display: flex;
     align-items: flex-start;
     gap: 50px;
-    margin: 2rem 0 3rem 0;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+    padding-top: 4.6rem;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
 }
 
 .about-text {
@@ -343,24 +412,56 @@ nav.main-nav ul li .dropdown-menu a {
     text-align: left;
 }
 
+.about-text p {
+    margin-bottom: 1.2rem;
+}
+
 .spreuk {
+    font-size: 1.2rem;
     color: var(--turquoise-dark);
     font-weight: bold;
     font-style: italic;
     margin-top: 1rem;
 }
 
-/* Praesidium & Kaarten */
+/* PRAESIDIUM */
+.praesidium-galerij {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.huidig-jaar-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
 .kaart-hoofd {
     background-color: var(--turquoise);
     color: var(--white);
     padding: 3rem 5rem;
     border-radius: 10px;
     text-decoration: none;
-    max-width: 1200px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease;
+}
+
+.kaart-hoofd .label {
+    display: block;
+    font-size: clamp(1.2rem, 5vw, 2rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.kaart-hoofd h2 {
+    margin: 0;
+    color: var(--white);
 }
 
 .kaart-hoofd:hover {
@@ -368,46 +469,29 @@ nav.main-nav ul li .dropdown-menu a {
     background-color: var(--turquoise-dark);
 }
 
-.kaart-hoofd .label {
-    font-size: clamp(1.2rem, 5vw, 2rem);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.9;
-}
-
-.kaart-hoofd h2 {
-    color: var(--white);
-}
-
-.rooster-4-kolommen,
-.card-grid {
-    display: grid;
-    gap: 20px;
+.archief-titel {
+    color: var(--turquoise-dark);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
 }
 
 .rooster-4-kolommen {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
-}
-
-.card-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.kaart-pro,
-.card {
-    background-color: var(--white);
-    border-radius: 8px;
-    padding: 1.5rem;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    gap: 20px;
 }
 
 .kaart-pro {
-    background-color: var(--bg-light);
-    border: 2px solid transparent;
+    background-color: var(--bg-light, #c1bfbf);
     color: var(--text-dark);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
     font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .kaart-pro:hover {
@@ -415,18 +499,28 @@ nav.main-nav ul li .dropdown-menu a {
     border-color: var(--turquoise);
     color: var(--turquoise-dark);
     transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.card {
-    border-top: 5px solid var(--turquoise);
-    padding: 2rem;
+/* --- PRAESIDIUM PER JAAR --- */
+.praesidium-detail {
+    max-width: 700px;
+    margin: 2rem auto 4rem auto;
+    padding: 0 2rem;
+    text-align: center;
 }
 
-.card:hover {
-    transform: translateY(-10px);
+.praesidium-titel {
+    color: var(--turquoise);
+    font-weight: 900;
+    margin-bottom: 3.5rem;
 }
 
-/* Praesidium Lijst */
+.praesidium-lijst {
+    display: flex;
+    flex-direction: column;
+}
+
 .praesidium-lid {
     border-bottom: 2px solid var(--turquoise);
     padding-bottom: 2rem;
@@ -438,35 +532,135 @@ nav.main-nav ul li .dropdown-menu a {
     margin-bottom: 0;
 }
 
-.praesidium-lid h3,
-.vertrouwens-naam {
+.praesidium-lid h3 {
     color: var(--turquoise-dark);
     font-size: clamp(1.1rem, 4.5vw, 1.6rem);
     text-transform: uppercase;
     letter-spacing: clamp(0px, 1vw, 2px);
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem 0;
 }
 
 .praesidium-lid .naam {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-dark);
+    margin: 0 0 0.3rem 0;
 }
 
-.praesidium-lid .studie,
-.vertrouwens-info {
+.praesidium-lid .studie {
     font-size: 1.05rem;
     color: #666;
     font-style: italic;
+    margin: 0;
 }
 
 .praesidium-info {
     max-width: 500px;
     margin: 1.5rem auto 0 auto;
     text-align: left;
+    line-height: 1.6;
 }
 
-/* Contactpagina */
+
+/* GEÏNTEGREERDE CONTAINERS (Veilig samengevoegd voor kortere code) */
+.kalender-container,
+.drive-container,
+.fotos-container {
+    background-color: var(--white);
+    border: 3px solid var(--turquoise);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.kalender-container,
+.drive-container {
+    max-width: 900px;
+    height: 600px;
+}
+
+.fotos-container {
+    height: 800px;
+}
+
+.kalender-container iframe,
+.drive-container iframe,
+.fotos-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* KALENDER, MERCRANTJE, FOTO'S SECTIES */
+.kalender-sectie {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.kalender-sectie p {
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.kalender-sectie h2,
+.mercrantje-sectie h2,
+.fotos-sectie h2,
+.contact-header h2 {
+    color: var(--turquoise-dark);
+    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+}
+
+.mercrantje-sectie,
+.fotos-sectie {
+    max-width: 1000px;
+    margin: 3rem auto 5rem auto;
+    padding: 0 1.5rem;
+    text-align: center;
+}
+
+.mercrantje-sectie .intro-tekst,
+.fotos-sectie .intro-tekst {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+}
+
+/* CLUBLIED */
+.clublied {
+    text-align: center;
+}
+
+.link_gewoon {
+    color: var(--turquoise-dark);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.refrein {
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* CONTACT */
+.contact-sectie {
+    max-width: 1100px;
+    margin: 3rem auto 5rem auto;
+    padding: 0 1.5rem;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
 .contact-container {
     display: flex;
     gap: 3rem;
@@ -488,6 +682,29 @@ nav.main-nav ul li .dropdown-menu a {
     border-left: 5px solid var(--turquoise);
 }
 
+.info-blok h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+    font-size: 1.3rem;
+}
+
+.info-blok p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.contact-link {
+    color: var(--turquoise);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
 .social-links-img {
     display: flex;
     gap: 1rem;
@@ -496,18 +713,40 @@ nav.main-nav ul li .dropdown-menu a {
 .social-icoon {
     width: 35px;
     height: 35px;
-    transition: transform 0.2s;
+    object-fit: contain;
+    transition: transform 0.2s ease-in-out;
 }
 
 .social-icoon:hover {
     transform: scale(1.15);
 }
 
+.contact-map {
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    min-height: 350px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    display: block;
+}
+
+/*-- Vertrouwenspersonen --*/
 .vertrouwens-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     margin-top: 3rem;
+}
+
+.vertrouwens-persoon {
+    text-align: center;
+    padding-bottom: 2rem;
 }
 
 .vertrouwens-foto {
@@ -519,27 +758,21 @@ nav.main-nav ul li .dropdown-menu a {
     border: 3px solid var(--turquoise);
 }
 
-.contact-link,
-.contact-link-v,
-.footer-email {
-    color: var(--turquoise);
-    font-weight: 600;
-    text-decoration: none;
+.vertrouwens-naam {
+    color: var(--turquoise-dark);
+    font-size: clamp(1.1rem, 4.5vw, 1.6rem);
+    text-transform: uppercase;
+    letter-spacing: clamp(0px, 1vw, 2px);
+    margin: 0 0 0.3rem 0;
 }
 
-.contact-link-v {
-    color: var(--text-dark);
-    display: inline;
+.vertrouwens-info {
+    font-size: 1.05rem;
+    color: #666;
+    font-style: italic;
+    margin: 0 0 0.5rem 0;
 }
 
-.contact-link:hover,
-.contact-link-v:hover,
-.footer-email:hover {
-    color: var(--turquoise);
-    text-decoration: underline;
-}
-
-/* Enkele Link op 1 regel afdwingen */
 .socials {
     display: block;
     text-align: center;
@@ -549,48 +782,46 @@ nav.main-nav ul li .dropdown-menu a {
     text-overflow: ellipsis;
 }
 
-/* Footer */
-footer {
-    background-color: var(--text-dark);
-    color: var(--white);
-    padding: 1.5rem 2rem;
+.contact-link-v {
+    display: inline;
+    color: var(--text-dark);
+    text-decoration: none;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
+.contact-link-v:hover {
+    color: var(--turquoise);
 }
 
-
-/* =========================================
-   6. MOBIELE WEERGAVE (Max 768px)
-========================================= */
+/* Aangepaste code voor gsm-formaat*/
 @media (max-width: 768px) {
 
+    /* 1. ALGEMENE ZAKEN */
     html,
     body {
         overflow-x: hidden;
     }
 
-    /* Navigatie Mobiel */
-    header h1::before,
-    header h1::after,
-    .nav-schild,
-    nav.main-nav ul li.dropdown .dropdown-menu {
-        display: none !important;
+    header img,
+    .logo img {
+        height: 55px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
     }
 
-    header img {
-        height: 55px;
-        margin-bottom: 10px;
+    header h1::before,
+    header h1::after {
+        display: none;
+    }
+
+    .nav-schild {
+        display: none !important;
     }
 
     nav.main-nav {
         padding: 0;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
     }
 
@@ -598,35 +829,29 @@ footer {
         display: none;
     }
 
+    nav.main-nav ul li.dropdown .dropdown-menu {
+        display: none !important;
+    }
+
     nav.main-nav ul {
+        display: flex;
         flex-wrap: nowrap !important;
         justify-content: flex-start;
         gap: 10px;
         padding: 12px 15px;
+        margin: 0;
         width: max-content;
     }
 
     nav.main-nav ul li a {
         white-space: nowrap;
         font-size: 0.95rem;
-        background-color: rgba(255, 255, 255, 0.1);
+        padding: 8px 16px;
         border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
     }
 
-    /* Flexbox naar Kolommen & Alles Centreren */
-    .about-layout,
-    .contact-container,
-    .praesidium-lid,
-    footer,
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        /* Zorgt dat alles perfect in het midden blijft */
-        text-align: center;
-        gap: 2rem;
-    }
-
-    /* Zorg dat teksten in mobiele modus mee-centreren */
+    /* 2. CENTREREN OP MOBIEL (De ontbrekende fix) */
     .praesidium-info {
         text-align: center;
         margin-top: 1rem;
@@ -636,14 +861,93 @@ footer {
         text-align: center;
     }
 
+    .info-blok {
+        text-align: center;
+    }
+
+    /* 3. HET PRAESIDIUM */
+    .praesidium-lid {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .rooster-4-kolommen {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .kaart-hoofd {
+        padding: 1.5rem 1rem !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 4. DE CONTACTPAGINA */
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        height: 350px;
+        margin-top: 2rem;
+    }
+
+    .vertrouwens-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 5. OVERIGE SECTIES */
+    .kalender-container {
+        height: 600px;
+        aspect-ratio: auto;
+    }
+
+    .clublied-kaart {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .drive-container {
+        height: 500px;
+    }
+
+    .fotos-container {
+        height: 65vh;
+    }
+
+    .about-layout {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        align-items: center;
+    }
+
     .about-layout img {
         display: block;
         margin: 0 auto;
     }
 
-    /* Layout Aanpassingen */
-    .rooster-4-kolommen {
-        grid-template-columns: 1fr 1fr;
+    footer,
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .hero-modern,
+    .section-white {
+        background-attachment: scroll !important;
+        background-position: bottom !important;
+        background-size: cover !important;
+    }
+
+    .card,
+    .card-grid {
+        justify-content: center;
     }
 
     .sponsors-grid {
@@ -655,45 +959,5 @@ footer {
     .sponsor-logo {
         height: 60px;
         margin: 0 auto;
-    }
-
-    .vertrouwens-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Paddings en Groottes resetten voor kleine schermen */
-    .kaart-hoofd {
-        padding: 1.5rem 1rem !important;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .praesidium-lid {
-        padding: 1.5rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .kalender-container,
-    .drive-container {
-        height: 500px;
-        aspect-ratio: auto;
-    }
-
-    .fotos-container {
-        height: 65vh;
-    }
-
-    .contact-map {
-        height: 350px;
-        margin-top: 1rem;
-    }
-
-    /* Hero Boot Fix */
-    .hero-modern,
-    .section-white {
-        background-attachment: scroll !important;
-        background-position: bottom !important;
-        background-size: cover !important;
     }
 }
