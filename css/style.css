@@ -866,9 +866,18 @@ footer {
     margin: 0 0 0.5rem 0;
 }
 
-.contact-link-v {
+.socials {
     display: block;
-    margin-bottom: 5px;
+    text-align: center;
+    width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-link-v {
+    display: inline;
     color: var(--text-dark);
     text-decoration: none;
 }
