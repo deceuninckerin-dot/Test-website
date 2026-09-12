@@ -1062,6 +1062,7 @@ footer {
         padding: 1.5rem;
         width: 100%;
         box-sizing: border-box;
+        white-space: nowrap;
     }
 
     .praesidium-info {
