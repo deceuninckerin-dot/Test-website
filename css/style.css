@@ -1,5 +1,4 @@
-/* ALGEMEEN*/
-
+/* ALGEMEEN */
 h1 {
     font-size: clamp(2rem, 5vw, 4rem);
     overflow-wrap: break-word;
@@ -10,19 +9,18 @@ h2 {
     overflow-wrap: break-word;
 }
 
-h3,
 p,
+a,
+li {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+/* Enkel afbreken in informatieve tekstblokken, niet in titels */
 .praesidium-info {
     overflow-wrap: break-word;
     word-wrap: break-word;
     -webkit-hyphens: auto;
     hyphens: auto;
-}
-
-p,
-a,
-li {
-    font-size: clamp(1rem, 2vw, 1.15rem);
 }
 
 .kaart-hoofd,
@@ -60,7 +58,6 @@ iframe,
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 30px;
-    /* Mooie ronde knoppen */
     font-weight: 600;
     transition: background 0.3s;
     display: inline-block;
@@ -106,9 +103,7 @@ main {
     padding: 2rem;
     max-width: 1000px;
     margin: 0 auto;
-
     flex: 1;
-
     width: 100%;
 }
 
@@ -118,14 +113,12 @@ header {
     color: var(--white);
     padding: 0 0 0;
     text-align: center;
-
 }
 
 header h1 {
     letter-spacing: 4px;
     margin: 0;
     font-weight: 250;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,14 +166,12 @@ nav.main-nav ul li a {
     transition: all 0.3s ease;
 }
 
-/*--Hover en Actieve pagina effect--*/
 nav.main-nav ul li a:hover,
 nav.main-nav ul li a.active {
     background-color: var(--white);
     color: var(--turquoise-dark);
 }
 
-/*--uitklapmenu--*/
 nav.main-nav ul li.dropdown {
     position: relative;
 }
@@ -190,7 +181,6 @@ nav.main-nav ul li .dropdown-menu {
     position: absolute;
     top: 78%;
     left: 0;
-
     background-color: var(--turquoise-dark);
     min-width: 149px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -248,11 +238,7 @@ footer {
     color: var(--turquoise);
 }
 
-
-
-
 /* HOMEPAGE */
-
 .dynamic-home {
     max-width: 100%;
     padding: 0;
@@ -270,7 +256,6 @@ footer {
     background-position: bottom;
     background-attachment: fixed;
     background-repeat: no-repeat;
-
     padding: 9rem 2rem;
     text-align: center;
     color: var(--white);
@@ -290,7 +275,6 @@ footer {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/*--dynamische-schuine-rand--*/
 .section-turquoise {
     background-color: var(--turquoise);
     color: var(--white);
@@ -315,13 +299,11 @@ footer {
     padding-top: 4rem;
 }
 
-/*--Kaarten-raster--*/
 .section-white {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/groepsfoto.JPEG');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
     padding: 6rem 2rem 8rem 2rem;
 }
 
@@ -390,11 +372,7 @@ footer {
     font-weight: 600;
 }
 
-
-
-
 /*OVER ONS*/
-
 .about-layout {
     display: flex;
     align-items: flex-start;
@@ -403,7 +381,6 @@ footer {
     margin-bottom: 3rem;
 }
 
-/*--schild--*/
 .about-image {
     flex: 1;
     text-align: center;
@@ -416,7 +393,6 @@ footer {
     height: auto;
 }
 
-/*--tekst--*/
 .about-text {
     flex: 2;
     text-align: left;
@@ -426,7 +402,6 @@ footer {
     margin-bottom: 1.2rem;
 }
 
-/*--spreuk--*/
 .spreuk {
     font-size: 1.2rem;
     color: var(--turquoise-dark);
@@ -435,11 +410,7 @@ footer {
     margin-top: 1rem;
 }
 
-
-
-
 /* PRAESIDIUM */
-
 .praesidium-galerij {
     max-width: 1000px;
     margin: 0 auto;
@@ -447,7 +418,6 @@ footer {
     padding-top: 2rem;
 }
 
-/*--Huidige Praesidium--*/
 .huidig-jaar-wrapper {
     display: flex;
     justify-content: center;
@@ -462,7 +432,6 @@ footer {
     text-decoration: none;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background-color 0.3s ease;
-
     flex-direction: column;
     align-items: center;
 }
@@ -486,7 +455,6 @@ footer {
     background-color: var(--turquoise-dark);
 }
 
-/*--pro's--*/
 .archief-titel {
     color: var(--turquoise-dark);
     margin-bottom: 2rem;
@@ -520,11 +488,7 @@ footer {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
 /* --- PRAESIDIUM PER JAAR --- */
-
 .praesidium-detail {
     max-width: 700px;
     margin: 2rem auto 4rem auto;
@@ -560,9 +524,7 @@ footer {
     text-transform: uppercase;
     letter-spacing: clamp(0px, 1vw, 2px);
     margin: 0 0 0.5rem 0;
-
     hyphens: none !important;
-    word-break: keep-all;
 }
 
 .praesidium-lid .naam {
@@ -586,11 +548,7 @@ footer {
     line-height: 1.6;
 }
 
-
-
-
 /* KALENDER */
-
 .kalender-sectie {
     text-align: center;
     padding: 2rem 0;
@@ -624,11 +582,7 @@ footer {
     border: 0;
 }
 
-
-
-
 /* CLUBLIED */
-
 .clublied {
     text-align: center;
 }
@@ -644,11 +598,7 @@ footer {
     font-style: italic;
 }
 
-
-
-
 /* MERCRANTJE */
-
 .mercrantje-sectie {
     max-width: 1000px;
     margin: 3rem auto 5rem auto;
@@ -668,7 +618,6 @@ footer {
     margin-bottom: 3rem;
 }
 
-
 .drive-container {
     width: 100%;
     height: 600px;
@@ -677,7 +626,6 @@ footer {
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-
 }
 
 .drive-container iframe {
@@ -686,11 +634,7 @@ footer {
     border: none;
 }
 
-
-
-
 /* FOTO'S */
-
 .fotos-sectie {
     max-width: 1100px;
     margin: 3rem auto 5rem auto;
@@ -726,12 +670,7 @@ footer {
     border: none;
 }
 
-
-
-
-
 /* CONTACT */
-
 .contact-sectie {
     max-width: 1100px;
     margin: 3rem auto 5rem auto;
@@ -870,7 +809,6 @@ footer {
     display: block;
     text-align: center;
     width: 100%;
-
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -884,6 +822,172 @@ footer {
 
 .contact-link-v:hover {
     color: var(--turquoise);
+}
+
+/* Aangepaste code voor gsm-formaat*/
+@media (max-width: 768px) {
+
+    /* 1. ALGEMENE ZAKEN */
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    header img,
+    .logo img {
+        height: 55px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    header h1::before,
+    header h1::after {
+        display: none;
+    }
+
+    .nav-schild {
+        display: none !important;
+    }
+
+    nav.main-nav {
+        padding: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    nav.main-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav.main-nav ul li.dropdown .dropdown-menu {
+        display: none !important;
+    }
+
+    nav.main-nav ul {
+        display: flex;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 12px 15px;
+        margin: 0;
+        width: max-content;
+    }
+
+    nav.main-nav ul li a {
+        white-space: nowrap;
+        font-size: 0.95rem;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* 2. HET PRAESIDIUM */
+    .praesidium-lid {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .praesidium-info {
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    .rooster-4-kolommen {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .kaart-hoofd {
+        padding: 1.5rem 1rem !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 3. DE CONTACTPAGINA */
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-map {
+        height: 350px;
+        margin-top: 2rem;
+    }
+
+    .vertrouwens-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 4. DE KALENDER */
+    .kalender-container {
+        height: 600px;
+        aspect-ratio: auto;
+    }
+
+    /* 5. HET CLUBLIED */
+    .clublied-kaart {
+        padding: 2.5rem 1.5rem;
+    }
+
+    /* 6. MERCRANTJE & FOTOMAPPEN */
+    .drive-container {
+        height: 500px;
+    }
+
+    .fotos-container {
+        height: 65vh;
+    }
+
+    /* 7. DE OVER ONS */
+    .about-layout {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .about-layout img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* 8. DE FOOTER */
+    footer,
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .hero-modern,
+    .section-white {
+        background-attachment: scroll !important;
+        background-position: bottom !important;
+        background-size: cover !important;
+    }
+
+    /* 9. HOMEPAGE */
+    .card,
+    .card-grid {
+        justify-content: center;
+    }
+
+    .sponsors-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .sponsor-logo {
+        height: 60px;
+        margin: 0 auto;
+    }
 }
 
 
