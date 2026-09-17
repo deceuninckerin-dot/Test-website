@@ -879,6 +879,11 @@ footer {
 }
 
 /*-- Vertrouwenspersonen --*/
+
+.contact-container h2 {
+    font-size: 2.8rem;
+}
+
 .vertrouwens-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1023,6 +1028,10 @@ footer {
     }
 
     /* 3. DE CONTACTPAGINA */
+    .contact-header h2 {
+        font-size: 1.4rem !important;
+    }
+
     .contact-container {
         flex-direction: column;
     }
@@ -1148,5 +1157,9 @@ footer {
 
     .sponsors-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-header h2 {
+        font-size: 1.2rem !important;
     }
 }
