@@ -14,9 +14,6 @@ h3,
 p,
 .praesidium-info {
     overflow-wrap: break-word;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
 }
 
 p,
@@ -25,21 +22,18 @@ li {
     font-size: clamp(1rem, 2vw, 1.15rem);
 }
 
-.kaart-hoofd,
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+a {
+    overflow-wrap: anywhere;
 }
 
-img,
 iframe,
 .witte-kaart,
 .kader {
+    height: 600px;
+    max-width: 100%;
+}
+
+img {
     max-width: 100%;
     height: auto;
 }
@@ -106,9 +100,6 @@ main {
     padding: 2rem;
     max-width: 1000px;
     margin: 0 auto;
-
-    flex: 1;
-
     width: 100%;
 }
 
@@ -162,6 +153,7 @@ nav.main-nav ul {
     gap: 15px;
     padding: 15px 0;
     margin: 0;
+    justify-content: center;
 }
 
 nav.main-nav ul li a {
@@ -226,13 +218,14 @@ footer {
     background-color: var(--text-dark);
     color: var(--white);
     padding: 1.5rem 2rem;
-    margin-top: 0;
+    margin-top: auto;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -264,6 +257,13 @@ footer {
     padding: 2rem;
 }
 
+.container p {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--white)
+}
+
 .hero-modern {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/mercator.JPEG');
     background-size: cover;
@@ -284,7 +284,6 @@ footer {
 }
 
 .hero-modern p {
-    font-size: 1.3rem;
     max-width: 600px;
     margin: 0 auto 2rem auto;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
@@ -316,6 +315,13 @@ footer {
 }
 
 /*--Kaarten-raster--*/
+
+.section-title-white {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 .section-white {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/groepsfoto.JPEG');
     background-size: cover;
@@ -327,7 +333,7 @@ footer {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 30px;
 }
 
@@ -352,6 +358,7 @@ footer {
 .card p {
     margin-bottom: 1.5rem;
     color: #666;
+    text-align: left;
 }
 
 /*--sponsers--*/
@@ -465,6 +472,10 @@ footer {
 
     flex-direction: column;
     align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 .kaart-hoofd .label {
@@ -544,6 +555,9 @@ footer {
 }
 
 .praesidium-lid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-bottom: 2px solid var(--turquoise);
     padding-bottom: 2rem;
     margin-bottom: 2rem;
@@ -560,9 +574,6 @@ footer {
     text-transform: uppercase;
     letter-spacing: clamp(0px, 1vw, 2px);
     margin: 0 0 0.5rem 0;
-
-    hyphens: none !important;
-    word-break: keep-all;
 }
 
 .praesidium-lid .naam {
@@ -584,6 +595,13 @@ footer {
     margin: 1.5rem auto 0 auto;
     text-align: left;
     line-height: 1.6;
+}
+
+.praesidium-lid img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 1rem;
 }
 
 
@@ -614,13 +632,13 @@ footer {
     border: 3px solid var(--turquoise);
     width: 100%;
     max-width: 900px;
-    height: 600px;
+    min-height: 600px;
     margin: 0 auto;
 }
 
 .kalender-container iframe {
     width: 100%;
-    height: 100%;
+    height: 600px;
     border: 0;
 }
 
@@ -644,6 +662,9 @@ footer {
     font-style: italic;
 }
 
+.clublied p {
+    margin-bottom: 30px;
+}
 
 
 
@@ -683,7 +704,7 @@ footer {
 .drive-container iframe {
     width: 100%;
     height: 100%;
-    border: none;
+    border: 0;
 }
 
 
@@ -730,6 +751,31 @@ footer {
 
 
 
+/*STATUTEN*/
+
+.statuten-sectie {
+    text-align: center;
+}
+
+.statuten-sectie h2 {
+    color: var(--turquoise-dark);
+    margin-bottom: 1rem;
+}
+
+.statuten-knop {
+    display: inline-block;
+    background: var(--turquoise);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+
+
 /* CONTACT */
 
 .contact-sectie {
@@ -758,6 +804,7 @@ footer {
     display: flex;
     gap: 3rem;
     align-items: stretch;
+    margin-bottom: 100px;
 }
 
 .contact-info {
@@ -820,6 +867,7 @@ footer {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     min-height: 350px;
+    width: 100%;
 }
 
 .contact-map iframe {
@@ -827,6 +875,7 @@ footer {
     height: 100%;
     min-height: 350px;
     display: block;
+    border: 0;
 }
 
 /*-- Vertrouwenspersonen --*/
@@ -843,8 +892,9 @@ footer {
 }
 
 .vertrouwens-foto {
-    width: 300px;
-    height: 300px;
+    width: min(300px, 80vw);
+    aspect-ratio: 1;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1.2rem;
@@ -871,9 +921,7 @@ footer {
     text-align: center;
     width: 100%;
 
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow-wrap: anywhere;
 }
 
 .contact-link-v {
@@ -896,9 +944,9 @@ footer {
 @media (max-width: 768px) {
 
     /* 1. ALGEMENE ZAKEN */
-    html,
-    body {
-        overflow-x: hidden;
+
+    main {
+        padding: 1rem;
     }
 
     header img,
@@ -953,7 +1001,6 @@ footer {
 
     /* 2. HET PRAESIDIUM */
     .praesidium-lid {
-        flex-direction: column;
         text-align: center;
         padding: 1.5rem;
         width: 100%;
@@ -981,18 +1028,23 @@ footer {
     }
 
     .contact-map {
-        height: 350px;
+        min-height: 300px;
         margin-top: 2rem;
     }
 
     .vertrouwens-grid {
         grid-template-columns: 1fr;
+        justify-items: center;
     }
 
     /* 4. DE KALENDER */
     .kalender-container {
         height: 600px;
         aspect-ratio: auto;
+    }
+
+    .kalender-container iframe {
+        height: 550px;
     }
 
     /* 5. HET CLUBLIED */
@@ -1002,11 +1054,12 @@ footer {
 
     /* 6. MERCRANTJE & FOTOMAPPEN */
     .drive-container {
-        height: 500px;
+        height: 550px;
     }
 
     .fotos-container {
         height: 65vh;
+        min-height: 450px;
     }
 
     /* 7. DE OVER ONS */
@@ -1023,14 +1076,18 @@ footer {
         margin: 0 auto;
     }
 
+    .about-image {
+        padding-top: 0;
+    }
+
     /* 8. DE FOOTER */
-    footer,
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
     .footer-content {
-        display: flex;
         flex-direction: column;
         text-align: center;
-        gap: 2.5rem;
-        padding: 2rem 1rem;
     }
 
     .hero-modern,
@@ -1056,5 +1113,40 @@ footer {
     .sponsor-logo {
         height: 60px;
         margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 1.7rem;
+        letter-spacing: 2px;
+    }
+
+    .container,
+    .mercrantje-sectie,
+    .fotos-sectie,
+    .contact-sectie {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .praesidium-detail {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .praesidium-lid {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .rooster-4-kolommen {
+        grid-template-columns: 1fr;
+    }
+
+    .sponsors-grid {
+        grid-template-columns: 1fr;
     }
 }
